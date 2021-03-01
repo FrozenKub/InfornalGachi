@@ -15,25 +15,25 @@ class Second extends React.Component{
                 <div className="infornal-block">
                     <div className="sample">
                         <div className="box1">
-                            <a>Название: Пьяный бубен</a> <br/> <a>Альбом: Алкоголизм сильнее гравитации</a> <br/> <a>Тема: Алкоголь</a>
+                            <h3>НАЗВАНИЕ</h3><h5>Пьяный бубен</h5> <h3>АЛЬБОМ</h3><h5>Алкоголизм сильнее гравитации</h5> <h3>ТЕМА</h3><h5>Алкоголь</h5><a href="https://www.youtube.com/watch?v=2tAL2Aw1SaA" target="_blank">ССЫЛКА</a>
                         </div>
-
-                        <img className="album-pic" src="https://i.imgur.com/EGZ0tMl.png" alt="Album" /> 
                     </div>
-                    <div className="sample">2</div>
-                    <div className="sample">3</div>
-                    <div className="sample">4</div>
-                    <div className="sample">5</div>
-                    <div className="sample">6</div>
-                    <div className="sample">7</div>
-                    <div className="sample">8</div>
-                    <div className="sample">9</div>
-                    <div className="sample">10</div>
-                    <div className="sample">11</div>
-                    <div className="sample">12</div>
-                    <div className="sample">13</div>
-                    <div className="sample">14</div>
-                    <div className="sample">15</div>
+                    <div className="sample">
+                        <div className="box1">
+                            <h3>НАЗВАНИЕ</h3><h5>Пьяный бубен</h5> <h3>АЛЬБОМ</h3><h5>Алкоголизм сильнее гравитации</h5> <h3>ТЕМА</h3><h5>Алкоголь</h5><a href="https://www.youtube.com/watch?v=2tAL2Aw1SaA" target="_blank">ССЫЛКА</a>
+                        </div></div>
+                    <div className="sample">
+                        <div className="box1">
+                            <h3>НАЗВАНИЕ</h3><h5>Пьяный бубен</h5> <h3>АЛЬБОМ</h3><h5>Алкоголизм сильнее гравитации</h5> <h3>ТЕМА</h3><h5>Алкоголь</h5><a href="https://www.youtube.com/watch?v=2tAL2Aw1SaA" target="_blank">ССЫЛКА</a>
+                        </div></div>
+
+                    <button className="great-button-thing">WTF</button>
+
+                    <div>
+                        <a>Filter1</a>
+                        <a>Filter1</a>
+                        <a>Filter1</a>
+                    </div>
                 </div>
 
 
