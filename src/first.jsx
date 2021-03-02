@@ -40,7 +40,7 @@ class First extends React.Component {
                     <Navbar.Group>
                         <Navbar.Heading>InfornalGachi</Navbar.Heading>
                         <Navbar.Divider />
-                        <Button className="bp3-minimal" icon="home"><a href="/first">Login</a></Button>
+                        <Button className="bp3-minimal" icon="home"><Link to="/first">Login</Link></Button>
                         <Button className="bp3-minimal" icon="home"><a href="/second">Infornal FuckЪ</a></Button>
                         <Button className="bp3-minimal" icon="home"><a href="/third">Gachi Remixes</a></Button>
                     </Navbar.Group>

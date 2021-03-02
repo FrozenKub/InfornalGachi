@@ -1,25 +1,39 @@
 import React from "react";
 const jwt = require('jsonwebtoken');
 import {store} from "./index.jsx";
+import {Button, Navbar} from "@blueprintjs/core";
+import {Link} from "react-router-dom";
 
 class Third extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {token: store.getState()[0].token}
     }
 
     componentDidMount() {
-        jwt.verify(this.state.token, 'privatekey', (err, authorizedData) => {
-            if(err){
-                //If error send Forbidden (403)
-                console.log('ERROR: Could not connect to the protected route');
-                alert("123")
-            } else {
-                //If token is successfully verified, we can send the autorized data
-                alert("NICE")
-                console.log('SUCCESS: Connected to protected route');
-            }
-        })
+        if (store.getState()[0] != undefined)
+        {
+            jwt.verify(store.getState()[0].token, 'privatekey', (err, authorizedData) => {
+                if(err){
+                    //If error send Forbidden (403)
+                    console.log('ERROR: Could not connect to the protected route');
+                    alert("YOU ARE NOT AUTHORIZED")
+                    window.location = "/";
+                } else {
+                    //If token is successfully verified, we can send the autorized data
+                    alert("NICE COCK")
+                    console.log('SUCCESS: Connected to protected route');
+                }
+            })
+        }
+        else
+        {
+
+            //If error send Forbidden (403)
+            console.log('ERROR: Could not connect to the protected route');
+            alert("YOU ARE NOT AUTHORIZED")
+            window.location = "/";
+        }
+
     }
 
     render() {
@@ -35,6 +49,18 @@ class Third extends React.Component{
                     <a href="/second">INFORNAL FUCKЪ</a>
                     <a href="/third">GACHI REMIXES</a>
                 </div>
+
+
+                <Navbar className="up">
+                    <Navbar.Group>
+                        <Navbar.Heading>InfornalGachi</Navbar.Heading>
+                        <Navbar.Divider/>
+                        <Button className="bp3-minimal" icon="home"><Link to="/">Login</Link></Button>
+                        <Button className="bp3-minimal" icon="home"><Link to="/second">Infornal FuckЪ</Link></Button>
+                        <Button className="bp3-minimal" icon="home"><Link to="/third">Gachi Remixes</Link></Button>
+                    </Navbar.Group>
+                </Navbar>
+
             </div>
 
         );

@@ -5,7 +5,12 @@ import './styles/style.css'
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {createStore} from 'redux'
 import rootReducer from './reducers/rootReducer.js'
+import {Provider} from "react-redux";
 
 export const store = createStore(rootReducer, [],  composeWithDevTools());
 
-ReactDOM.render(<Main/>, document.getElementById("root"));
+ReactDOM.render(
+    <Provider store={store}>
+        <Main/>
+    </Provider>
+    , document.getElementById("root"));
