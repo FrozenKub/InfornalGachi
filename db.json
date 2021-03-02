@@ -1,50 +1,50 @@
-        [
+{
         {
-            title: "ДЛЯ РАНДОМНОГО ПОДБОРА ТРЕКА",
-            album: "НАЖМИТЕ КНОПКУ WTF",
-            piclink: "http://pa1.narvii.com/6052/a1830bd0460ffddf1fa4163ab259542034d43718_00.gif",
-            href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            "title": "ДЛЯ РАНДОМНОГО ПОДБОРА ТРЕКА",
+            "album": "НАЖМИТЕ КНОПКУ WTF",
+            "piclink": "http://pa1.narvii.com/6052/a1830bd0460ffddf1fa4163ab259542034d43718_00.gif",
+            "href": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         },
         {
-            title: "Шаверма или фаст-фуд в огне",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
-            href: "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
+            "title": "Шаверма или фаст-фуд в огне",
+            "album": "Алкоголизм сильнее гравитации",
+            "piclink": "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
+            "href": "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
         },
         {
-            title: "Потому что мы дебилы",
-            album: "Полночь. XXI век",
-            piclink: "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=4VlrrGLgqvI"
+            "title": "Потому что мы дебилы",
+            "album": "Полночь. XXI век",
+            "piclink": "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
+            "href": "https://www.youtube.com/watch?v=4VlrrGLgqvI"
         },
         {
-            title: "Конунг олаф Моржовый Хер",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://i1.sndcdn.com/artworks-000300446103-ovkgqq-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=iFBU828ZzHE"
+            "title": "Конунг олаф Моржовый Хер",
+            "album": "Алкоголизм сильнее гравитации",
+            "piclink": "https://i1.sndcdn.com/artworks-000300446103-ovkgqq-t500x500.jpg",
+            "href": "https://www.youtube.com/watch?v=iFBU828ZzHE"
         },
         {
-            title: "Сага о Сигурде Синяя Рожа",
-            album: "Алкоголизм сильнее алкоголя",
-            piclink: "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
-            href: "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
+            "title": "Сага о Сигурде Синяя Рожа",
+            "album": "Алкоголизм сильнее алкоголя",
+            "piclink": "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
+            "href": "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
         },
         {
-            title: "Песнь о загубленной кукушке",
-            album: "Полночь. XXI век",
-            piclink: "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=4VlrrGLgqvI"
+            "title": "Песнь о загубленной кукушке",
+            "album": "Полночь. XXI век",
+            "piclink": "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
+            "href": "https://www.youtube.com/watch?v=4VlrrGLgqvI"
         },
         {
-            title: "Готка-шлюха",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://i1.sndcdn.com/artworks-000300446103-ovkgqq-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=iFBU828ZzHE"
+            "title": "Готка-шлюха",
+            "album": "Алкоголизм сильнее гравитации",
+            "piclink": "https://i1.sndcdn.com/artworks-000300446103-ovkgqq-t500x500.jpg",
+            "href": "https://www.youtube.com/watch?v=iFBU828ZzHE"
         },
         {
-            title: "Православная бабуля",
-            album: "Полночь. XXI век",
-            piclink: "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=4VlrrGLgqvI"
+            "title": "Православная бабуля",
+            "album": "Полночь. XXI век",
+            "piclink": "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
+            "href": "https://www.youtube.com/watch?v=4VlrrGLgqvI"
         }
-     ]
+}
