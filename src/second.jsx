@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Card, Elevation, Navbar } from "@blueprintjs/core";
+import {array} from "prop-types";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max)+1);
 }
-
 
 let songs =
     [
@@ -67,7 +67,6 @@ class Second extends React.Component{
 
     }
 
-
     handleClick(e)
     {
         let max = 7
@@ -75,6 +74,12 @@ class Second extends React.Component{
         console.log(max)
     }
 
+
+    handleAlbumSort(e)
+    {
+        this.setState({l1: getRandomInt(max), l2: getRandomInt(max-1), l3: getRandomInt(max-2)})
+        console.log(max)
+    }
 
     render() {
         return (
@@ -107,7 +112,8 @@ class Second extends React.Component{
 
         </div>
             <div className="centered">
-                <Button className="great-button" onClick={e=> this.handleClick(e)}>WTF</Button>
+                <Button className="great-button" onClick={e=> this.handleClick(e) }>WTF</Button>
+                <Button onClick={e=> this.handleAlbumSort(e) }>Album Sort</Button>
 
                 <Navbar className="up">
                     <Navbar.Group>
