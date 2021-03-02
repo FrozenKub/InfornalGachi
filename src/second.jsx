@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Elevation, Navbar } from "@blueprintjs/core";
 import {array} from "prop-types";
+import {Link} from "react-router-dom";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max)+1);
@@ -113,15 +114,14 @@ class Second extends React.Component{
         </div>
             <div className="centered">
                 <Button className="great-button" onClick={e=> this.handleClick(e) }>WTF</Button>
-                <Button onClick={e=> this.handleAlbumSort(e) }>Album Sort</Button>
 
                 <Navbar className="up">
                     <Navbar.Group>
                         <Navbar.Heading>InfornalGachi</Navbar.Heading>
                         <Navbar.Divider />
-                        <Button className="bp3-minimal" icon="home"><a href="/">Login</a></Button>
-                        <Button className="bp3-minimal" icon="home"><a href="/second">Infornal FuckЪ</a></Button>
-                        <Button className="bp3-minimal" icon="home"><a href="/third">Gachi Remixes</a></Button>
+                        <Button className="bp3-minimal" icon="home"><Link to="/">Login</Link></Button>
+                        <Button className="bp3-minimal" icon="home"><Link to="/second">Infornal FuckЪ</Link></Button>
+                        <Button className="bp3-minimal" icon="home"><Link to="/third">Gachi Remixes</Link></Button>
                     </Navbar.Group>
                 </Navbar>
             </div>
