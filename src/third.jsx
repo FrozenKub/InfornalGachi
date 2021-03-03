@@ -1,6 +1,5 @@
 import React from "react";
 const jwt = require('jsonwebtoken');
-import {store} from "./index.jsx";
 import {Button, Navbar} from "@blueprintjs/core";
 import {Link} from "react-router-dom";
 
@@ -10,9 +9,9 @@ class Third extends React.Component{
     }
 
     componentDidMount() {
-        if (store.getState()[0] != undefined)
+        if (localStorage.getItem("token") !== "" )
         {
-            jwt.verify(store.getState()[0].token, 'privatekey', (err, authorizedData) => {
+            jwt.verify(localStorage.getItem("token"), 'hire_me_please', (err, authorizedData) => {
                 if(err){
                     //If error send Forbidden (403)
                     console.log('ERROR: Could not connect to the protected route');
@@ -27,7 +26,6 @@ class Third extends React.Component{
         }
         else
         {
-
             //If error send Forbidden (403)
             console.log('ERROR: Could not connect to the protected route');
             alert("YOU ARE NOT AUTHORIZED")

@@ -16,7 +16,7 @@ import Auth from "./third.jsx"
 import Register from "./second.jsx"
 import {Button, Card, Navbar} from "@blueprintjs/core";
 
-import {applyToken} from "./actions/index.js"
+import {applyToken} from "./actions"
 
 import {store} from "./index.jsx";
 
@@ -29,14 +29,16 @@ class Main extends React.Component {
 
 
     handleSubmit () {
+console.log(123)
         this.showToast()
         //checking to make sure the user entered the correct username/password combo
         if(123 == this.state.username && 123 == this.state.password) {
             //if user log in success, generate a JWT token for the user with a secret key
-            jwt.sign({ foo: 'bar' }, 'privatekey', { expiresIn: '1h' },(err, token) => {
+            jwt.sign({ foo: 'bar' }, 'hire_me_please', { expiresIn: '1h' },(err, token) => {
                 if(err) { console.log(err) }
                 this.setState({token: token})
                 store.dispatch(applyToken(this.state.token))
+                console.log(223)
             });
         } else {
             console.log('ERROR: Could not log in');

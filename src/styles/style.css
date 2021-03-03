@@ -65,6 +65,12 @@ body {
   height: 90%;
 }
 
+.down
+{
+  position: absolute;
+  align-self: center;
+  bottom: 0;
+}
 
 .centered
 {
