@@ -2,6 +2,9 @@ import React, {useCallback} from "react";
 const jwt = require('jsonwebtoken');
 import {Position, Toaster} from "@blueprintjs/core";
 
+import {useDispatch} from "react-redux";
+
+
 export const AppToaster = Toaster.create({
     position: Position.BOTTOM
 });
@@ -17,26 +20,20 @@ import Auth from "./third.jsx"
 import Register from "./second.jsx"
 import {Button, Card, Navbar} from "@blueprintjs/core";
 
-import {applyToken} from "./actions"
 
 
-    class Main extends React.Component {
+function Main() {
 
-    constructor(props) {
-        super(props);
-        this.state = {username: "123", password: "123", token: ""}
-    }
+    const dispatch = useDispatch()
 
-
-    handleSubmit () {
+    function handleSubmit () {
         console.log(123)
-        this.showToast()
-        if(123 == this.state.username && 123 == this.state.password) {
+        showToast()
+        if(1===1) {
             jwt.sign({ foo: 'bar' }, 'hire_me_please', { expiresIn: '1h' },(err, token) => {
                 if(err) { console.log(err) }
-                this.setState({token: token})
-
-                dispatch(applyToken(this.state.token))
+                dispatch({ type: 'APPLY_TOKEN', token: token })
+                localStorage.setItem("token", token)
                 console.log(223)
             });
         } else {
@@ -44,12 +41,10 @@ import {applyToken} from "./actions"
         }
     }
 
-    showToast() {
+    function showToast() {
         AppToaster.show({ message: "SUCCESS" });
     }
 
-
-    render() {
         return (
 <div>
 
@@ -65,7 +60,7 @@ import {applyToken} from "./actions"
                 <Card className="login-block">
                     <input className="bp3-input .modifier"  placeholder="LOGIN" dir="auto"/>
                     <input className="bp3-input .modifier" type="password" placeholder="PASSWORD" dir="auto"/>
-                    <Button onClick={e => this.handleSubmit()} type="submit">SUBMIT</Button>
+                    <Button onClick={e => handleSubmit()} type="submit">SUBMIT</Button>
                 </Card>
 
 
@@ -88,7 +83,7 @@ import {applyToken} from "./actions"
                     </Route>
 
                     <Route exact path="/third">
-                        <Auth token={this.state.token}/>
+                        <Auth />
                     </Route>
 
 
@@ -97,7 +92,6 @@ import {applyToken} from "./actions"
     </Router>
 </div>
         );
-    }
 }
 
 export default Main

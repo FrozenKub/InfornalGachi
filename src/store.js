@@ -12,6 +12,7 @@ const reducer = {
     rootRed: rootReducer
 }
 
+
 export const store = configureStore({
     reducer,
     middleware
