@@ -1,23 +1,16 @@
 import React from "react";
 const jwt = require('jsonwebtoken');
-import {Button, Navbar} from "@blueprintjs/core";
 import {Link} from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import InfiniteList from 'react-infinite-scroll-list';
+import { Button, ButtonGroup, Card, Elevation, Navbar } from "@blueprintjs/core";
 
-const style = {
-    height: 30,
-    border: "1px solid green",
-    margin: 6,
-    padding: 8
-};
 
 
 
 class Third extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {items: Array.from({ length: 20 }), hasMoreItems: true}
+        this.state = {items: Array.from({ length: 3 }), hasMore: true}
         this.fetchMoreData = this.fetchMoreData.bind(this);
     }
 
@@ -44,26 +37,47 @@ class Third extends React.Component{
             window.location = "/";
         }
 
-        this.setState({items: Array.from({ length: 20 }), hasMoreItems: true})
+        this.setState({items: Array.from({ length: 3 }), hasMore: true})
     }
 
 
     fetchMoreData () {
-        console.log("this.state: " + this.state)
-        setTimeout(() => {
-            this.setState({
-                items: this.state.items.concat(Array.from({ length: 20 }))
-            });
-        }, 1500);
+
+        if (this.state.items.length >= 9) {
+            this.setState({ hasMore: false });
+        }
+        else {
+            setTimeout(() => {
+                this.setState({
+                    items: this.state.items.concat(Array.from({ length: 3 }))
+                });
+            }, 1500);
+        }
     };
 
+    handleVideoUnmute (index) {
+        let video=document.getElementById(index);
+        video.style.transform = "scale(0.7) translate(0, 0) ";
+        video.style.transition = "transform 0.25s ease";
+        if (video.muted)
+        {
+            video.muted = !video.muted;
+        }
+        else
+        {
+            video.style.transform = "scale(1) translate(0, 0) ";
+            video.style.transition = "transform 0.25s ease";
+            video.muted = !video.muted;
+        }
+        console.log("HEH")
+    }
 
     render() {
         return (
         <div>
 
         <div className="full-screen">
-            <video src="/123.mp4" autoPlay muted loop/>
+            <video src="/1234.mp4" autoPlay muted loop/>
         </div>
 
             <div className="centered">
@@ -71,25 +85,34 @@ class Third extends React.Component{
                 <div className="third-full">
 
 
-                    <div id="scrollableDiv" style={{ height: 300, overflow: "auto" }}>
+                    <div id="scrollableDiv" className="scrollable">
                         <InfiniteScroll
                             dataLength={this.state.items.length}
                             next={this.fetchMoreData}
                             hasMore={true}
-                            loader={<h4>Loading...</h4>}
+                            loader={
+                                <Card className="scroller">
+                                <h5>GACHING</h5>
+                                <p>MUCHING</p>
+                                <video  className="loader" src={"/"+1234+".mp4"} autoPlay muted loop />
+                            </Card>}
+                            endMessage={
+                                <Card className="scroller">
+                                <h5>END OF GACHI</h5>
+                                <p>YOU ARE MASTER NOW</p>
+                                <video  className="loader" src={"/"+1234+".mp4"} autoPlay muted loop />
+                            </Card>
+                            }
                             scrollableTarget="scrollableDiv"
                         >
                             {this.state.items.map((i, index) => (
-                                <div style={style} key={index}>
-                                    div - #{index}
-                                </div>
+                                <Card className="card-rel">
+                                    <h5>НАЗВАНИЕ ТРЕКА</h5>
+                                    <p>АВТОР</p>
+                                    <video onClick={e=>this.handleVideoUnmute(index)} className="album-vid" src={"/"+index+".mp4"} id={index} autoPlay muted loop/>
+                                </Card>
                             ))}
                         </InfiniteScroll>
-                    </div>
-
-
-                    <div className="admin-block">
-                        <button onClick={() => console.log(this.state.items)}>BUTTON</button>
                     </div>
 
                 </div>
