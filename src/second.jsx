@@ -123,11 +123,11 @@ class Second extends React.Component{
                     case "По алфавиту вверх": {
                         songs.sort(function (a, b) {
                             let titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase()
-                            if (titleA < titleB) //сортируем строки по возрастанию
+                            if (titleA < titleB)
                                 return -1
                             if (titleA > titleB)
                                 return 1
-                            return 0 // Никакой сортировки
+                            return 0
                         })
                         this.setState({l1: 1, l2: 2, l3: 3})
                     }
@@ -136,11 +136,11 @@ class Second extends React.Component{
                     case "По алфавиту вниз": {
                         songs.sort(function (a, b) {
                             let titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase()
-                            if (titleA < titleB) //сортируем строки по возрастанию
+                            if (titleA < titleB)
                                 return -1
                             if (titleA > titleB)
                                 return 1
-                            return 0 // Никакой сортировки
+                            return 0
                         })
                         this.setState({l1: max, l2: max-1, l3: max-2})
                     }

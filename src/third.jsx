@@ -13,12 +13,10 @@ class Third extends React.Component{
         {
             jwt.verify(localStorage.getItem("token"), 'hire_me_please', (err, authorizedData) => {
                 if(err){
-                    //If error send Forbidden (403)
                     console.log('ERROR: Could not connect to the protected route');
                     alert("YOU ARE NOT AUTHORIZED")
                     window.location = "/";
                 } else {
-                    //If token is successfully verified, we can send the autorized data
                     alert("NICE COCK")
                     console.log('SUCCESS: Connected to protected route');
                 }
