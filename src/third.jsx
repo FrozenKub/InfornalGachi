@@ -2,22 +2,43 @@ import React from "react";
 const jwt = require('jsonwebtoken');
 import {Button, Navbar} from "@blueprintjs/core";
 import {Link} from "react-router-dom";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+
+const style = {
+    height: 30,
+    border: "1px solid green",
+    margin: 6,
+    padding: 8
+};
 
 
 
 class Third extends React.Component{
     constructor(props) {
         super(props);
-
+        this.state = {
+            items: Array.from({ length: 20 }), hasMoreItems: true
+        }
     }
 
 
 
 
 
+    fetchMoreItems() {
+        if (this.state.items.length >= 500) {
+            this.setState({ hasMoreItems: false });
+            return;
+        }
 
-
-
+        // a fake async api call
+        setTimeout(() => {
+            this.setState({
+                items: this.state.items.concat(Array.from({ length: 20 }))
+            });
+        }, 500);
+    }
 
 
 
@@ -55,8 +76,21 @@ class Third extends React.Component{
 
                 <div className="third-full">
 
-                    <div className="infinite">
 
+                    <div id="scrollableDiv" style={{ height: 300, overflow: "auto" }}>
+                        <InfiniteScroll
+                            dataLength={this.state.items.length}
+                            next={this.fetchMoreData}
+                            hasMore={true}
+                            loader={<h4>Loading...</h4>}
+                            scrollableTarget="scrollableDiv"
+                        >
+                            {this.state.items.map((i, index) => (
+                                <div style={style} key={index}>
+                                    div - #{index}
+                                </div>
+                            ))}
+                        </InfiniteScroll>
                     </div>
 
 
