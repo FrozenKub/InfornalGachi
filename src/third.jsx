@@ -3,10 +3,23 @@ const jwt = require('jsonwebtoken');
 import {Button, Navbar} from "@blueprintjs/core";
 import {Link} from "react-router-dom";
 
+
+
 class Third extends React.Component{
     constructor(props) {
         super(props);
+
     }
+
+
+
+
+
+
+
+
+
+
 
     componentDidMount() {
         if (localStorage.getItem("token") !== "" )
@@ -14,10 +27,8 @@ class Third extends React.Component{
             jwt.verify(localStorage.getItem("token"), 'hire_me_please', (err, authorizedData) => {
                 if(err){
                     console.log('ERROR: Could not connect to the protected route');
-                    alert("YOU ARE NOT AUTHORIZED")
                     window.location = "/";
                 } else {
-                    alert("NICE COCK")
                     console.log('SUCCESS: Connected to protected route');
                 }
             })
@@ -34,17 +45,30 @@ class Third extends React.Component{
 
     render() {
         return (
+        <div>
 
+        <div className="full-screen">
+            <video src="/123.mp4" autoPlay muted loop/>
+        </div>
 
             <div className="centered">
-                GACHI REMIXES
+
+                <div className="third-full">
+
+                    <div className="infinite">
+
+                    </div>
 
 
-                <div className="footer">
-                    <a href="/">LOGIN PAGE</a>
-                    <a href="/second">INFORNAL FUCKЪ</a>
-                    <a href="/third">GACHI REMIXES</a>
+                    <div className="admin-block">
+
+                    </div>
+
                 </div>
+
+
+
+
 
 
                 <Navbar className="up">
@@ -58,7 +82,7 @@ class Third extends React.Component{
                 </Navbar>
 
             </div>
-
+        </div>
         );
     }
 }

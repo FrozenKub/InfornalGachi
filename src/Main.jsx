@@ -29,7 +29,7 @@ function Main() {
     function handleSubmit () {
         console.log(123)
         showToast()
-        if(1===1) {
+        if(document.getElementById("login").value==123 && document.getElementById("password").value==123) {
             jwt.sign({ foo: 'bar' }, 'hire_me_please', { expiresIn: '1h' },(err, token) => {
                 if(err) { console.log(err) }
                 dispatch({ type: 'APPLY_TOKEN', token: token })
@@ -58,8 +58,8 @@ function Main() {
 
 
                 <Card className="login-block">
-                    <input className="bp3-input .modifier"  placeholder="LOGIN" dir="auto"/>
-                    <input className="bp3-input .modifier" type="password" placeholder="PASSWORD" dir="auto"/>
+                    <input className="bp3-input .modifier"  placeholder="LOGIN" dir="auto" id="login"/>
+                    <input className="bp3-input .modifier" type="password" placeholder="PASSWORD" dir="auto" id="password"/>
                     <Button onClick={e => handleSubmit()} type="submit">SUBMIT</Button>
                 </Card>
 

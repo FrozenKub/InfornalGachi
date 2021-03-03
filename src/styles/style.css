@@ -2,6 +2,55 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
+
+.full-screen{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-screen video{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.third-full
+{
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2vw;
+}
+
+.infinite
+{
+  width: 95%;
+  height: 90%;
+  background-color: #1d59ff;
+}
+
+
+.admin-block
+{
+  width: 70%;
+  height: 90%;
+  background-color: #1d59ff;
+}
+
 .card-rel
 {
   display: flex;

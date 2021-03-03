@@ -1,71 +1,28 @@
 import React from "react";
 import { Button, ButtonGroup, Card, Elevation, Navbar } from "@blueprintjs/core";
 import {Link} from "react-router-dom";
-import {array} from "prop-types";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max)+1);
 }
 
-const max =7;
+let max = 1;
 
 let songs =
     [
         {
             id: 0,
-            title: "TES",
-            album: "TES",
-            piclink: "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
-            href: "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
+            title: "LOADING",
+            album: "LOADING",
+            piclink: "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/200_d.gif",
+            href: "https://youtu.be/dQw4w9WgXcQ"
         },
         {
-            id: 1,
-            title: "Шаверма или фаст-фуд в огне",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
-            href: "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
-        },
-        {
-            id: 2,
-            title: "Потому что мы дебилы",
-            album: "Полночь. XXI век",
-            piclink: "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=4VlrrGLgqvI"
-        },
-        {
-            id: 3,
-            title: "Конунг олаф Моржовый Хер",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://i1.sndcdn.com/artworks-000300446103-ovkgqq-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=iFBU828ZzHE"
-        },
-        {
-            id: 4,
-            title: "Сага о Сигурде Синяя Рожа",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://e.snmc.io/i/600/w/a0cd20195175db06b9a991e9684aec76/2492536",
-            href: "https://www.youtube.com/watch?v=XA6KpWSGZOQ"
-        },
-        {
-            id: 5,
-            title: "Песнь о загубленной кукушке",
-            album: "Полночь. XXI век",
-            piclink: "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=4VlrrGLgqvI"
-        },
-        {
-            id: 6,
-            title: "Готка-шлюха",
-            album: "Алкоголизм сильнее гравитации",
-            piclink: "https://i1.sndcdn.com/artworks-000300446103-ovkgqq-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=iFBU828ZzHE"
-        },
-        {
-            id: 7,
-            title: "Православная бабуля",
-            album: "Полночь. XXI век",
-            piclink: "https://i1.sndcdn.com/artworks-000300444573-tl5dgc-t500x500.jpg",
-            href: "https://www.youtube.com/watch?v=4VlrrGLgqvI"
+            id: 0,
+            title: "LOADING",
+            album: "LOADING",
+            piclink: "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/200_d.gif",
+            href: "https://youtu.be/dQw4w9WgXcQ"
         }
     ]
 
@@ -266,8 +223,21 @@ class Second extends React.Component{
     }
 
     componentDidMount() {
+        fetch('https://api.jsonbin.io/b/603fb7ba0866664b1088031e/1')
+            .then((response) => response.json())
+            .then((json) => {
+                songs = json
+                max = songs.length-1;
+                this.handleClick()
+            });
+
+
+
+
+
         this.setState({l1: getRandomInt(max), l2: getRandomInt(max-1), l3: getRandomInt(max-2)})
         setInterval(() => this.handleClick(), 60*1000);
+
     }
 
 
