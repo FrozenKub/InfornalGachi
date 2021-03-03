@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 import {Button, Navbar} from "@blueprintjs/core";
 import {Link} from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-
+import InfiniteList from 'react-infinite-scroll-list';
 
 const style = {
     height: 30,
@@ -17,28 +17,10 @@ const style = {
 class Third extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            items: Array.from({ length: 20 }), hasMoreItems: true
-        }
+        this.state = {items: Array.from({ length: 20 }), hasMoreItems: true}
+        this.fetchMoreData = this.fetchMoreData.bind(this);
     }
 
-
-
-
-
-    fetchMoreItems() {
-        if (this.state.items.length >= 500) {
-            this.setState({ hasMoreItems: false });
-            return;
-        }
-
-        // a fake async api call
-        setTimeout(() => {
-            this.setState({
-                items: this.state.items.concat(Array.from({ length: 20 }))
-            });
-        }, 500);
-    }
 
 
 
@@ -62,7 +44,19 @@ class Third extends React.Component{
             window.location = "/";
         }
 
+        this.setState({items: Array.from({ length: 20 }), hasMoreItems: true})
     }
+
+
+    fetchMoreData () {
+        console.log("this.state: " + this.state)
+        setTimeout(() => {
+            this.setState({
+                items: this.state.items.concat(Array.from({ length: 20 }))
+            });
+        }, 1500);
+    };
+
 
     render() {
         return (
@@ -95,7 +89,7 @@ class Third extends React.Component{
 
 
                     <div className="admin-block">
-
+                        <button onClick={() => console.log(this.state.items)}>BUTTON</button>
                     </div>
 
                 </div>
