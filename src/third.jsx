@@ -5,12 +5,36 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { Button, ButtonGroup, Card, Elevation, Navbar } from "@blueprintjs/core";
 
 
+let remixes =
+    [
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        }
 
+];
 
 class Third extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {items: Array.from({ length: 3 }), hasMore: true}
+        this.state = {items: Array.from({ length: 3 }), hasMore: true, uploaded: false}
         this.fetchMoreData = this.fetchMoreData.bind(this);
     }
 
@@ -18,6 +42,8 @@ class Third extends React.Component{
 
 
     componentDidMount() {
+        this.getDataFromJSON();
+
         if (localStorage.getItem("token") !== "" )
         {
             jwt.verify(localStorage.getItem("token"), 'hire_me_please', (err, authorizedData) => {
@@ -36,13 +62,11 @@ class Third extends React.Component{
             alert("YOU ARE NOT AUTHORIZED")
             window.location = "/";
         }
-
         this.setState({items: Array.from({ length: 3 }), hasMore: true})
     }
 
 
     fetchMoreData () {
-
         if (this.state.items.length >= 9) {
             this.setState({ hasMore: false });
         }
@@ -71,6 +95,19 @@ class Third extends React.Component{
         }
         console.log("HEH")
     }
+
+    getDataFromJSON()
+    {
+        fetch('https://api.jsonbin.io/b/6040804681087a6a8b95ed90/1')
+            .then((response) => response.json())
+            .then((json) => {
+                remixes = json
+                this.setState({uploaded: true})
+            });
+        console.log("DONE")
+        this.setState({uploaded: true})
+    }
+
 
     render() {
         return (
@@ -106,10 +143,12 @@ class Third extends React.Component{
                             scrollableTarget="scrollableDiv"
                         >
                             {this.state.items.map((i, index) => (
+
                                 <Card className="card-rel">
-                                    <h5>НАЗВАНИЕ ТРЕКА</h5>
-                                    <p>АВТОР</p>
-                                    <video onClick={e=>this.handleVideoUnmute(index)} className="album-vid" src={"/"+index+".mp4"} id={index} autoPlay muted loop/>
+                                    <h5>{remixes[index].title}</h5>
+                                    <p>{remixes[index].author}</p>
+                                    <p>{remixes[index].original}</p>
+                                    <video onClick={e=>this.handleVideoUnmute(index)} className="album-vid" src={remixes[index].link} id={index} autoPlay muted loop/>
                                 </Card>
                             ))}
                         </InfiniteScroll>
