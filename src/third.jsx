@@ -93,7 +93,12 @@ class Third extends React.Component{
             video.style.transition = "transform 0.25s ease";
             video.muted = !video.muted;
         }
-        console.log("HEH")
+    }
+
+    handleRadioUnmute () {
+        let audio=document.getElementById("radio");
+            audio.muted = !audio.muted;
+
     }
 
     getDataFromJSON()
@@ -115,6 +120,8 @@ class Third extends React.Component{
 
         <div className="full-screen">
             <video src="/1234.mp4" autoPlay muted loop/>
+            <audio id="radio"  autoPlay muted controls="controls"
+                   src="https://node-17.zeno.fm/f174214qvzzuv?rj-ttl=5&rj-tok=AAABd_0Lp48A9qsgwwlemZta-w"/>
         </div>
 
             <div className="centered">
@@ -168,6 +175,7 @@ class Third extends React.Component{
                         <Button className="bp3-minimal" icon="home"><Link to="/">Login</Link></Button>
                         <Button className="bp3-minimal" icon="home"><Link to="/second">Infornal FuckЪ</Link></Button>
                         <Button className="bp3-minimal" icon="home"><Link to="/third">Gachi Remixes</Link></Button>
+                        <a onClick={e=> this.handleRadioUnmute()}><Button className="bp3-minimal" icon="music">Gachi Radio</Button></a>
                     </Navbar.Group>
                 </Navbar>
 

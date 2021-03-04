@@ -29,7 +29,7 @@ function Main() {
     function handleSubmit () {
         console.log(123)
         showToast()
-        if(document.getElementById("login").value==123 && document.getElementById("password").value==123) {
+        if(document.getElementById("login").value=="Gachi" && document.getElementById("password").value=="Muchi") {
             jwt.sign({ foo: 'bar' }, 'hire_me_please', { expiresIn: '1h' },(err, token) => {
                 if(err) { console.log(err) }
                 dispatch({ type: 'APPLY_TOKEN', token: token })
