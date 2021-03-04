@@ -67,7 +67,7 @@ class Third extends React.Component{
 
 
     fetchMoreData () {
-        if (this.state.items.length >= 9) {
+        if (this.state.items.length >= remixes.length) {
             this.setState({ hasMore: false });
         }
         else {
@@ -98,7 +98,7 @@ class Third extends React.Component{
 
     getDataFromJSON()
     {
-        fetch('https://api.jsonbin.io/b/6040804681087a6a8b95ed90/1')
+        fetch('https://api.jsonbin.io/b/6040804681087a6a8b95ed90/3')
             .then((response) => response.json())
             .then((json) => {
                 remixes = json
@@ -129,14 +129,14 @@ class Third extends React.Component{
                             hasMore={true}
                             loader={
                                 <Card className="scroller">
-                                <h5>GACHING</h5>
-                                <p>MUCHING</p>
+                                <h1>GACHING</h1>
+                                <h2>MUCHING</h2>
                                 <video  className="loader" src={"/"+1234+".mp4"} autoPlay muted loop />
                             </Card>}
                             endMessage={
                                 <Card className="scroller">
-                                <h5>END OF GACHI</h5>
-                                <p>YOU ARE MASTER NOW</p>
+                                <h1>END OF GACHI</h1>
+                                <h2>YOU ARE MASTER NOW</h2>
                                 <video  className="loader" src={"/"+1234+".mp4"} autoPlay muted loop />
                             </Card>
                             }
@@ -145,9 +145,9 @@ class Third extends React.Component{
                             {this.state.items.map((i, index) => (
 
                                 <Card className="card-rel">
-                                    <h5>{remixes[index].title}</h5>
-                                    <p>{remixes[index].author}</p>
-                                    <p>{remixes[index].original}</p>
+                                    <h1>{remixes[index].title}</h1>
+                                    <h2>{remixes[index].author}</h2>
+                                    <h3>{remixes[index].original}</h3>
                                     <video onClick={e=>this.handleVideoUnmute(index)} className="album-vid" src={remixes[index].link} id={index} autoPlay muted loop/>
                                 </Card>
                             ))}
