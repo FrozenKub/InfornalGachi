@@ -27,6 +27,48 @@ let remixes =
             author: "",
             original: "",
             link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
+        },
+        {
+            id: "LOADING",
+            title: "LOADING",
+            author: "",
+            original: "",
+            link: "/loading.mp4"
         }
 
 ];
