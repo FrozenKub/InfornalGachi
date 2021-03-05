@@ -34,6 +34,7 @@
   grid-row-gap: 200%;
   width: 50%;
   height: 100%;
+  max-height: 100%;
   overflow: auto;
 }
 .scroller

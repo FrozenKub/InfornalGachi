@@ -27,22 +27,25 @@ function Main() {
     const dispatch = useDispatch()
 
     function handleSubmit () {
-        console.log(123)
-        showToast()
         if(document.getElementById("login").value=="Gachi" && document.getElementById("password").value=="Muchi") {
             jwt.sign({ foo: 'bar' }, 'hire_me_please', { expiresIn: '1h' },(err, token) => {
                 if(err) { console.log(err) }
                 dispatch({ type: 'APPLY_TOKEN', token: token })
                 localStorage.setItem("token", token)
-                console.log(223)
+                showToast()
             });
         } else {
-            console.log('ERROR: Could not log in');
+            showBadToast()
         }
     }
 
     function showToast() {
         AppToaster.show({ message: "SUCCESS" });
+    }
+
+
+    function showBadToast() {
+        AppToaster.show({ message: "WRONG SOMETHING" });
     }
 
         return (
