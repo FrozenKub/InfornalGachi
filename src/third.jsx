@@ -162,7 +162,7 @@ class Third extends React.Component{
 
         <div className="full-screen">
             <video src="/1234.mp4" autoPlay muted loop/>
-            <audio id="radio"  autoPlay muted controls="controls"
+            <audio id="radio" hidden autoPlay muted controls="controls"
                    src="https://node-17.zeno.fm/f174214qvzzuv?rj-ttl=5&rj-tok=AAABd_0Lp48A9qsgwwlemZta-w"/>
         </div>
 
