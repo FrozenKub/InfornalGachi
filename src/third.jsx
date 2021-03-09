@@ -88,7 +88,7 @@ class Third extends React.Component{
 
         if (localStorage.getItem("token") !== "" )
         {
-            jwt.verify(localStorage.getItem("token"), 'hire_me_please', (err, authorizedData) => {
+            jwt.verify(localStorage.getItem("token"), 'heh', (err, authorizedData) => {
                 if(err){
                     console.log('ERROR: Could not connect to the protected route');
                     window.location = "/";
